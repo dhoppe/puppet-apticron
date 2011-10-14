@@ -1,0 +1,24 @@
+# Class: apticron
+#   This module manages apticron
+#
+# Definition:
+#   apticron::email
+#   listchanges::email
+#
+# Parameters:
+#   $email - specify the email, default is root
+#
+# Actions:
+#   Installs the apticron.conf, listchanges.conf and cron
+#
+# Requires:
+#   -
+#
+# Sample Usage:
+#   listchanges::email { "/etc/apt/listchanges.conf":
+#      email => "listchanges@${domain}",
+#   }
+#
+#   apticron::email { "/etc/apticron/apticron.conf":
+#      email => "apticron@${domain}",
+#   }

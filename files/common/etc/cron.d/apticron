@@ -1,0 +1,7 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/modules/production/apticron/files/common/etc/cron.d/apticron
+#
+
+# apticron
+00 7	* * *	root	test -x /usr/sbin/apticron && /usr/sbin/apticron --cron

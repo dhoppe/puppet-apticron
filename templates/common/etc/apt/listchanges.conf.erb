@@ -1,0 +1,11 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# <%= file %>
+#
+
+[apt]
+frontend=pager
+email_address=<%= t_email %>
+confirm=0
+save_seen=/var/lib/apt/listchanges.db
+which=news
