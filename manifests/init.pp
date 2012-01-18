@@ -25,17 +25,17 @@ class apticron {
 			group   => root,
 			mode    => 0644,
 			alias   => "apticron.conf",
-			content => template("apticron/$lsbdistcodename/etc/apticron/apticron.conf.erb"),
+			content => template("apticron/$::lsbdistcodename/etc/apticron/apticron.conf.erb"),
 			require => Package["apticron"],
 		}
 	}
 
 	listchanges::email { "/etc/apt/listchanges.conf":
-		email => "listchanges@${domain}",
+		email => "listchanges@${::domain}",
 	}
 
 	apticron::email { "/etc/apticron/apticron.conf":
-		email => "apticron@${domain}",
+		email => "apticron@${::domain}",
 	}
 
 	file { "/etc/cron.d/apticron":
