@@ -1,0 +1,9 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# <%= file %>
+#
+
+# apticron
+<% Puppet::Parser::Functions.function('fqdn_rand') -%>
+<% value = scope.function_fqdn_rand(['60']) -%>
+<%= value.to_s -%> 7	* * *	root	test -x /usr/sbin/apticron && /usr/sbin/apticron --cron

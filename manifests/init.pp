@@ -42,7 +42,7 @@ class apticron {
 		owner   => root,
 		group   => root,
 		mode    => 0644,
-		source  => "puppet:///modules/apticron/common/etc/cron.d/apticron",
+		content => template("apticron/common/etc/cron.d/apticron.erb"),
 		require => [
 			File["apticron.conf"],
 			Package["apticron"]
