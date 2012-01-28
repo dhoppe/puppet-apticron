@@ -6,10 +6,10 @@
   "project_page": "http://github.com/dhoppe/puppet-apticron",
   "source": "git://github.com/dhoppe/puppet-apticron",
   "summary": "Apticron Module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "checksums": {
-    "Modulefile": "edafa0be80c7b37ee792920d743fa0f6",
-    "README": "d75673c2143c50b864d47a1cb7268e48",
+    "Modulefile": "df96d4dee8f6e165f45e39a3b1ee1238",
+    "README": "0b956cd012503161d289b3c9a9eaeb33",
     "manifests/init.pp": "127094e6407c684a873de716d3fe9a5e",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
