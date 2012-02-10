@@ -31,11 +31,11 @@ class apticron {
 	}
 
 	listchanges::email { "/etc/apt/listchanges.conf":
-		email => "listchanges@${::domain}",
+		email => hiera('listchanges'),
 	}
 
 	apticron::email { "/etc/apticron/apticron.conf":
-		email => "apticron@${::domain}",
+		email => hiera('apticron'),
 	}
 
 	file { "/etc/cron.d/apticron":
