@@ -55,7 +55,8 @@ class apticron {
 
 	package { [
 		"apticron",
-		"apt-listchanges" ]:
+		"apt-listchanges",
+		"apt-show-versions" ]:
 		ensure => present,
 	}
 }
