@@ -1,4 +1,7 @@
 class apticron {
+	validate_string(hiera('apticron'))
+	validate_string(hiera('listchanges'))
+
 	define listchanges::email($email = false) {
 		$t_email = $email ? {
 			false   => 'root',
