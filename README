@@ -6,7 +6,7 @@
 #   listchanges::email
 #
 # Parameters:
-#   $email - specify the email, default is root
+#   $email - specify the email
 #
 # Actions:
 #   Installs the apticron.conf, listchanges.conf and cron
@@ -15,10 +15,10 @@
 #   -
 #
 # Sample Usage:
-#   listchanges::email { "/etc/apt/listchanges.conf":
-#      email => hiera('listchanges'),
+#   listchanges::email { '/etc/apt/listchanges.conf':
+#     email => $email_listchanges,
 #   }
 #
-#   apticron::email { "/etc/apticron/apticron.conf":
-#      email => hiera('apticron'),
+#   apticron::email { '/etc/apticron/apticron.conf':
+#     email => $email_apticron,
 #   }
