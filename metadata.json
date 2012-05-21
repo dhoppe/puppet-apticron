@@ -8,8 +8,10 @@
   "summary": "Apticron Module",
   "version": "0.0.12",
   "checksums": {
+    "Gemfile": "d5ce5c80f3c31e583507eb80b61b7400",
     "Modulefile": "464fa6c5dbc2370032e9e155bd3cfeac",
     "README": "415388dd4a44da8b4aa3d8b5293f87e7",
+    "Rakefile": "aac3a0179a3d0a7749c5dfc1384829e5",
     "examples/apticron.yaml": "47e7a732ad08303b9a9f85d490c76eb4",
     "manifests/config.pp": "760e00c10eb1a7006eef0438ab6c057b",
     "manifests/init.pp": "c2e4514022f680c72b526638fbaaaa32",
