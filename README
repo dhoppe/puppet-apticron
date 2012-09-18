@@ -12,9 +12,16 @@
 #   Installs the apticron.conf, listchanges.conf and cron
 #
 # Requires:
-#   -
+#   - stdlib - https://github.com/puppetlabs/puppetlabs-stdlib
 #
 # Sample Usage:
+#   class { 'apticron':
+#     email_apticron    => $email_apticron,
+#     email_listchanges => $email_listchanges,
+#   }
+#
+#   or
+#
 #   listchanges::email { '/etc/apt/listchanges.conf':
 #     email => $email_listchanges,
 #   }

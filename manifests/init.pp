@@ -3,8 +3,8 @@ class apticron (
   $email_listchanges = $apticron::params::listchanges
 ) inherits apticron::params {
 
-  validate_string(hiera('apticron'))
-  validate_string(hiera('listchanges'))
+  validate_string($email_apticron)
+  validate_string($email_listchanges)
 
   apticron::listchanges { '/etc/apt/listchanges.conf':
     email => $email_listchanges,
