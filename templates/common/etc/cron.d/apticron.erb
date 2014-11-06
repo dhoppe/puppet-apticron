@@ -1,0 +1,8 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# <%= file %>
+#
+
+# apticron
+
+<%= @random -%> * * * * root if test -x /usr/sbin/apticron; then /usr/sbin/apticron --cron; else true; fi
