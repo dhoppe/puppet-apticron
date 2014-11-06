@@ -1,0 +1,14 @@
+---
+apticron::config_file_template: "apticron/%{::lsbdistcodename}/etc/apticron/apticron.conf.erb"
+apticron::config_file_hash:
+  'apticron':
+    config_file_path:     '/etc/cron.d/apticron'
+    config_file_template: 'apticron/common/etc/cron.d/apticron.erb'
+  'listchanges.conf':
+    config_file_path:     '/etc/apt/listchanges.conf'
+    config_file_template: 'apticron/common/etc/apt/listchanges.conf.erb'
+    config_file_require:  'Package[apt-listchanges]'
+apticron::email: "admin@%{::domain}"
+apticron::email_from: "root@%{::fqdn}"
+apticron::email_subject: '[apticron] $SYSTEM: $NUM_PACKAGES package update(s)'
+apticron::random: 15
