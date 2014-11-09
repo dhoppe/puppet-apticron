@@ -1,3 +1,7 @@
+## 2014-11-08 Release 1.0.2
+### Summary:
+- [Puppet] Switch to top-scope variables
+
 ## 2014-11-08 Release 1.0.1
 ### Summary:
 - [Beaker] Update nodesets
