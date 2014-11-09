@@ -5,4 +5,4 @@
 
 # apticron
 
-<%= @random -%> * * * * root if test -x /usr/sbin/apticron; then /usr/sbin/apticron --cron; else true; fi
+<%= scope.lookupvar('::apticron::random') -%> * * * * root if test -x /usr/sbin/apticron; then /usr/sbin/apticron --cron; else true; fi
