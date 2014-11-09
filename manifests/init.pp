@@ -2,23 +2,23 @@
 #
 class apticron (
   $package_ensure           = 'present',
-  $package_name             = $apticron::params::package_name,
-  $package_list             = $apticron::params::package_list,
+  $package_name             = $::apticron::params::package_name,
+  $package_list             = $::apticron::params::package_list,
 
-  $config_dir_path          = $apticron::params::config_dir_path,
+  $config_dir_path          = $::apticron::params::config_dir_path,
   $config_dir_purge         = false,
   $config_dir_recurse       = true,
   $config_dir_source        = undef,
 
-  $config_file_path         = $apticron::params::config_file_path,
-  $config_file_owner        = $apticron::params::config_file_owner,
-  $config_file_group        = $apticron::params::config_file_group,
-  $config_file_mode         = $apticron::params::config_file_mode,
+  $config_file_path         = $::apticron::params::config_file_path,
+  $config_file_owner        = $::apticron::params::config_file_owner,
+  $config_file_group        = $::apticron::params::config_file_group,
+  $config_file_mode         = $::apticron::params::config_file_mode,
   $config_file_source       = undef,
   $config_file_string       = undef,
   $config_file_template     = undef,
 
-  $config_file_require      = $apticron::params::config_file_require,
+  $config_file_require      = $::apticron::params::config_file_require,
 
   $config_file_hash         = {},
   $config_file_options_hash = {},
@@ -27,7 +27,7 @@ class apticron (
   $email_from               = "root@${::fqdn}",
   $email_subject            = '[apticron] $SYSTEM: $NUM_PACKAGES package update(s)',
   $random                   = fqdn_rand('60'),
-) inherits apticron::params {
+) inherits ::apticron::params {
   validate_re($package_ensure, '^(absent|latest|present|purged)$')
   validate_string($package_name)
   if $package_list { validate_array($package_list) }
