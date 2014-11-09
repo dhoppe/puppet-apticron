@@ -11,7 +11,7 @@ define apticron::define (
 
   $config_file_require      = undef,
 
-  $config_file_options_hash = $apticron::config_file_options_hash,
+  $config_file_options_hash = $::apticron::config_file_options_hash,
 ) {
   if $config_file_path { validate_absolute_path($config_file_path) }
   if $config_file_owner { validate_string($config_file_owner) }
@@ -23,16 +23,16 @@ define apticron::define (
 
   if $config_file_require { validate_string($config_file_require) }
 
-  $_config_file_path  = pick($config_file_path, "${apticron::config_dir_path}/${name}")
-  $_config_file_owner = pick($config_file_owner, $apticron::config_file_owner)
-  $_config_file_group = pick($config_file_group, $apticron::config_file_group)
-  $_config_file_mode = pick($config_file_mode, $apticron::config_file_mode)
+  $_config_file_path  = pick($config_file_path, "${::apticron::config_dir_path}/${name}")
+  $_config_file_owner = pick($config_file_owner, $::apticron::config_file_owner)
+  $_config_file_group = pick($config_file_group, $::apticron::config_file_group)
+  $_config_file_mode = pick($config_file_mode, $::apticron::config_file_mode)
   $config_file_content = default_content($config_file_string, $config_file_template)
 
-  $_config_file_require = pick($config_file_require, $apticron::config_file_require)
+  $_config_file_require = pick($config_file_require, $::apticron::config_file_require)
 
   file { "define_${name}":
-    ensure  => $apticron::config_file_ensure,
+    ensure  => $::apticron::config_file_ensure,
     path    => $_config_file_path,
     owner   => $_config_file_owner,
     group   => $_config_file_group,
