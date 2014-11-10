@@ -1,3 +1,8 @@
+## 2014-11-10 Release 1.0.3
+### Summary:
+- [Puppet] Fix documentation
+- [Puppet] Remove unnecessary newline
+
 ## 2014-11-08 Release 1.0.2
 ### Summary:
 - [Puppet] Switch to top-scope variables
