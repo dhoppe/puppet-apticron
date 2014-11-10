@@ -188,7 +188,7 @@ Determines the name of package to manage. Defaults to 'apticron'.
 
 #### `package_list`
 
-Determines if additional packages should be managed. Defaults to 'undef'.
+Determines if additional packages should be managed. Defaults to '['apt-listchanges']'.
 
 #### `config_dir_ensure`
 
