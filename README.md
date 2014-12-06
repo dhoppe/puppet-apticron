@@ -256,11 +256,11 @@ Determines which parameters should be passed to an ERB template. Defaults to '{}
 
 #### `email`
 
-Determines which email address (recipient) should be notified about impending updates. Defaults to 'apticron@${::domain}'.
+Determines which email address (recipient) should be notified about impending updates. Defaults to "apticron@${::domain}".
 
 #### `email_from`
 
-Determines which email address (sender) should be used. Defaults to 'root@${::fqdn}'.
+Determines which email address (sender) should be used. Defaults to "root@${::fqdn}".
 
 #### `email_subject`
 
