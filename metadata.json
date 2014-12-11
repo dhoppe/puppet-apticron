@@ -4,13 +4,13 @@
   "author": "Dennis Hoppe",
   "summary": "This module installs and configures the Apticron package.",
   "license": "Apache 2.0",
-  "source": "git://github.com/dhoppe/puppet-apticron",
+  "source": "git://github.com/dhoppe/puppet-apticron.git",
   "project_page": "https://github.com/dhoppe/puppet-apticron",
   "issues_url": "https://github.com/dhoppe/puppet-apticron/issues",
   "dependencies": [
     {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0 < 5.0.0"
     }
   ],
   "operatingsystem_support": [
