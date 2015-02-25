@@ -274,7 +274,7 @@ Determines which time a cron job should be executed. Defaults to 'fqdn_rand('60'
 
 This module has been tested on:
 
-* Debian 6/7
+* Debian 6/7/8
 * Ubuntu 12.04/14.04
 
 ## Development
