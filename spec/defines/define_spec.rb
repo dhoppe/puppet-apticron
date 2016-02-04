@@ -16,11 +16,11 @@ describe 'apticron::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_apticron.conf').with({
+          is_expected.to contain_file('define_apticron.conf').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/apticron/wheezy/etc/apticron/apticron.conf',
             'require' => 'Package[apticron]',
-          })
+          )
         end
       end
 
@@ -31,11 +31,11 @@ describe 'apticron::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_apticron.conf').with({
+          is_expected.to contain_file('define_apticron.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[apticron]',
-          })
+          )
         end
       end
 
@@ -46,11 +46,11 @@ describe 'apticron::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_apticron.conf').with({
+          is_expected.to contain_file('define_apticron.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[apticron]',
-          })
+          )
         end
       end
 
@@ -64,11 +64,11 @@ describe 'apticron::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_apticron.conf').with({
+          is_expected.to contain_file('define_apticron.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[apticron]',
-          })
+          )
         end
       end
     end
