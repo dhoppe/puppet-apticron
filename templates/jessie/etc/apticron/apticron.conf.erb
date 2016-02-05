@@ -8,7 +8,7 @@
 # set EMAIL to a space separated list of addresses which will be notified of
 # impending updates
 #
-EMAIL="<%= scope.lookupvar('::apticron::email') %>"
+EMAIL="<%= scope['::apticron::email'] %>"
 
 #
 # Set DIFF_ONLY to "1" to only output the difference of the current run
@@ -41,7 +41,7 @@ LISTCHANGES_PROFILE="apticron"
 # of "hostname -f" for the system name in the mails it generates. This option
 # overrides the ALL_FQDNS above.
 #
-SYSTEM="<%= scope.lookupvar('::fqdn') %>"
+SYSTEM="<%= scope['::fqdn'] %>"
 
 #
 # Set IPADDRESSNUM if you would like to configure the maximal number of IP
@@ -87,7 +87,7 @@ SYSTEM="<%= scope.lookupvar('::fqdn') %>"
 # If you want to use internal vars please use single quotes here. Ex:
 # $CUSTOM_SUBJECT='[apticron] $SYSTEM: $NUM_PACKAGES package update(s)'
 #
-CUSTOM_SUBJECT='<%= scope.lookupvar('::apticron::email_subject') %>'
+CUSTOM_SUBJECT='<%= scope['::apticron::email_subject'] %>'
 
 # Set CUSTOM_NO_UPDATES_SUBJECT if you want to replace the default subject used
 # in the no update notification e-mails. This may help filtering/sorting
@@ -100,6 +100,6 @@ CUSTOM_SUBJECT='<%= scope.lookupvar('::apticron::email_subject') %>'
 #
 # Set CUSTOM_FROM if you want to replace the default sender by changing the
 # 'From:' field used in the notification e-mails. Your default sender will
-# be something like root@<%= scope.lookupvar('::fqdn') %>.
+# be something like root@<%= scope['::fqdn'] %>.
 #
-CUSTOM_FROM="<%= scope.lookupvar('::apticron::email_from') %>"
+CUSTOM_FROM="<%= scope['::apticron::email_from'] %>"

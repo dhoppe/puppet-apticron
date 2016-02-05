@@ -8,7 +8,7 @@
 # set EMAIL to a space separated list of addresses which will be notified of
 # impending updates
 #
-EMAIL="<%= scope.lookupvar('::apticron::email') %>"
+EMAIL="<%= scope['::apticron::email'] %>"
 
 #
 # Set DIFF_ONLY to "1" to only output the difference of the current run
@@ -29,7 +29,7 @@ LISTCHANGES_PROFILE="apticron"
 # Set SYSTEM if you would like apticron to use something other than the output
 # of "hostname -f" for the system name in the mails it generates
 #
-SYSTEM="<%= scope.lookupvar('::fqdn') %>"
+SYSTEM="<%= scope['::fqdn'] %>"
 
 #
 # Set IPADDRESSNUM if you would like to configure the maximal number of IP
@@ -68,4 +68,4 @@ SYSTEM="<%= scope.lookupvar('::fqdn') %>"
 # Set CUSTOM_SUBJECT if you want to replace the default subject used in
 # the notification e-mails. This may help filtering/sorting client-side e-mail.
 #
-CUSTOM_SUBJECT='<%= scope.lookupvar('::apticron::email_subject') %>'
+CUSTOM_SUBJECT='<%= scope['::apticron::email_subject'] %>'
