@@ -3,6 +3,7 @@ require 'spec_helper_acceptance'
 case fact('osfamily')
 when 'Debian'
   package_name     = 'apticron'
+  package_list     = 'apt-listchanges'
   config_file_path = '/etc/apticron/apticron.conf'
 end
 
@@ -29,6 +30,9 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       describe package(package_name) do
         it { is_expected.to be_installed }
       end
+      describe package(package_list) do
+        it { is_expected.to be_installed }
+      end
     end
 
     context 'when package latest' do
@@ -45,6 +49,9 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       describe package(package_name) do
         it { is_expected.to be_installed }
       end
+      describe package(package_list) do
+        it { is_expected.to be_installed }
+      end
     end
 
     context 'when package absent' do
@@ -59,6 +66,9 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       end
 
       describe package(package_name) do
+        it { is_expected.not_to be_installed }
+      end
+      describe package(package_list) do
         it { is_expected.not_to be_installed }
       end
       describe file(config_file_path) do
@@ -78,6 +88,9 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       end
 
       describe package(package_name) do
+        it { is_expected.not_to be_installed }
+      end
+      describe package(package_list) do
         it { is_expected.not_to be_installed }
       end
       describe file(config_file_path) do

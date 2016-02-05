@@ -20,6 +20,9 @@ describe 'apticron', :type => :class do
             is_expected.to contain_package('apticron').with(
               'ensure' => 'present',
             )
+            is_expected.to contain_package('apt-listchanges').with(
+              'ensure' => 'present',
+            )
           end
         end
 
@@ -32,6 +35,9 @@ describe 'apticron', :type => :class do
             is_expected.to contain_package('apticron').with(
               'ensure' => 'latest',
             )
+            is_expected.to contain_package('apt-listchanges').with(
+              'ensure' => 'latest',
+            )
           end
         end
 
@@ -42,6 +48,9 @@ describe 'apticron', :type => :class do
 
           it do
             is_expected.to contain_package('apticron').with(
+              'ensure' => 'absent',
+            )
+            is_expected.to contain_package('apt-listchanges').with(
               'ensure' => 'absent',
             )
           end
@@ -60,6 +69,9 @@ describe 'apticron', :type => :class do
 
           it do
             is_expected.to contain_package('apticron').with(
+              'ensure' => 'purged',
+            )
+            is_expected.to contain_package('apt-listchanges').with(
               'ensure' => 'purged',
             )
           end
