@@ -17,9 +17,12 @@ describe 'apticron', :type => :class do
       describe 'apticron::install' do
         context 'defaults' do
           it do
-            is_expected.to contain_package('apticron').with({
+            is_expected.to contain_package('apticron').with(
               'ensure' => 'present',
-            })
+            )
+            is_expected.to contain_package('apt-listchanges').with(
+              'ensure' => 'present',
+            )
           end
         end
 
@@ -29,9 +32,12 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('apticron').with({
+            is_expected.to contain_package('apticron').with(
               'ensure' => 'latest',
-            })
+            )
+            is_expected.to contain_package('apt-listchanges').with(
+              'ensure' => 'latest',
+            )
           end
         end
 
@@ -41,15 +47,18 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('apticron').with({
+            is_expected.to contain_package('apticron').with(
               'ensure' => 'absent',
-            })
+            )
+            is_expected.to contain_package('apt-listchanges').with(
+              'ensure' => 'absent',
+            )
           end
           it do
-            is_expected.to contain_file('apticron.conf').with({
+            is_expected.to contain_file('apticron.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
 
@@ -59,15 +68,18 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('apticron').with({
+            is_expected.to contain_package('apticron').with(
               'ensure' => 'purged',
-            })
+            )
+            is_expected.to contain_package('apt-listchanges').with(
+              'ensure' => 'purged',
+            )
           end
           it do
-            is_expected.to contain_file('apticron.conf').with({
+            is_expected.to contain_file('apticron.conf').with(
               'ensure'  => 'absent',
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
       end
@@ -75,10 +87,10 @@ describe 'apticron', :type => :class do
       describe 'apticron::config' do
         context 'defaults' do
           it do
-            is_expected.to contain_file('apticron.conf').with({
+            is_expected.to contain_file('apticron.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
 
@@ -88,14 +100,14 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('apticron.dir').with({
+            is_expected.to contain_file('apticron.dir').with(
               'ensure'  => 'directory',
               'force'   => false,
               'purge'   => false,
               'recurse' => true,
               'source'  => 'puppet:///modules/apticron/wheezy/etc/apticron',
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
 
@@ -106,14 +118,14 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('apticron.dir').with({
+            is_expected.to contain_file('apticron.dir').with(
               'ensure'  => 'directory',
               'force'   => true,
               'purge'   => true,
               'recurse' => true,
               'source'  => 'puppet:///modules/apticron/wheezy/etc/apticron',
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
 
@@ -123,11 +135,11 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('apticron.conf').with({
+            is_expected.to contain_file('apticron.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/apticron/wheezy/etc/apticron/apticron.conf',
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
 
@@ -137,11 +149,11 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('apticron.conf').with({
+            is_expected.to contain_file('apticron.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
 
@@ -151,11 +163,11 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('apticron.conf').with({
+            is_expected.to contain_file('apticron.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
 
@@ -168,11 +180,11 @@ describe 'apticron', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('apticron.conf').with({
+            is_expected.to contain_file('apticron.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[apticron]',
-            })
+            )
           end
         end
       end

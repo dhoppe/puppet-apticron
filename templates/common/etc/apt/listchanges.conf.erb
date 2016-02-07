@@ -5,7 +5,7 @@
 
 [apt]
 frontend=pager
-email_address=<%= scope.lookupvar('::apticron::email') %>
+email_address=<%= scope['::apticron::email'] %>
 confirm=0
 save_seen=/var/lib/apt/listchanges.db
 which=news
