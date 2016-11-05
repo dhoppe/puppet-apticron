@@ -1,10 +1,11 @@
 # apticron
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-apticron.png?branch=master)](https://travis-ci.org/dhoppe/puppet-apticron)
+[![Code Coverage](https://coveralls.io/repos/github/dhoppe/puppet-apticron/badge.svg?branch=master)](https://coveralls.io/github/dhoppe/puppet-apticron)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/apticron.svg)](https://forge.puppetlabs.com/dhoppe/apticron)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/apticron.svg)](https://forge.puppetlabs.com/dhoppe/apticron)
-[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
-[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/dhoppe/apticron.svg)](https://forge.puppetlabs.com/dhoppe/apticron)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/dhoppe/apticron.svg)](https://forge.puppetlabs.com/dhoppe/apticron)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/dhoppe/apticron.svg)](https://forge.puppetlabs.com/dhoppe/apticron)
 
 #### Table of Contents
 
