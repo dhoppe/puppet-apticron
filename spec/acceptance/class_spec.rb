@@ -7,14 +7,14 @@ when 'Debian'
   config_file_path = '/etc/apticron/apticron.conf'
 end
 
-describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
+describe 'apticron', if: SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   it 'is_expected.to work with no errors' do
     pp = <<-EOS
       class { 'apticron': }
     EOS
 
-    apply_manifest(pp, :catch_failures => true)
-    apply_manifest(pp, :catch_changes => true)
+    apply_manifest(pp, catch_failures: true)
+    apply_manifest(pp, catch_changes: true)
   end
 
   describe 'apticron::install' do
@@ -24,7 +24,7 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'apticron': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -43,7 +43,7 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -62,7 +62,7 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -84,7 +84,7 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -106,7 +106,7 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'apticron': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -122,7 +122,7 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -149,7 +149,7 @@ describe 'apticron', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file('/etc/cron.d/apticron') do
